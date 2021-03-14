@@ -1,0 +1,24 @@
+{
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "affected": { "defaultBase": "master" },
+  "npmScope": "micro",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+    }
+  },
+  "projects": {
+    "reactapp": { "tags": [] },
+    "reactapp-e2e": { "tags": [], "implicitDependencies": ["reactapp"] },
+    "ngapp": { "tags": [] },
+    "ngapp-e2e": { "tags": [], "implicitDependencies": ["ngapp"] }
+  }
+}
